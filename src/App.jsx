@@ -7,6 +7,7 @@ import Transcribing from './Components/Transcribing';
 import Information from './Components/Information';
 import { FFmpeg } from '@ffmpeg/ffmpeg';
 import { fetchFile } from '@ffmpeg/util';
+import { API_URL } from './config';
 
 const ffmpeg = new FFmpeg({ log: true });
 
@@ -20,7 +21,7 @@ const App = () => {
 
   const testServerConnection = async () => {
     try {
-      const response = await fetch('http://localhost:3000/test');
+      const response = await fetch(`${API_URL}/test`);
       const data = await response.json();
       console.log("Server test response:", data);
     } catch (error) {
@@ -97,7 +98,7 @@ const App = () => {
 
     try {
       console.log('Transcribing audio...');
-      const response = await fetch('http://localhost:3000/transcribe', {
+      const response = await fetch(`${API_URL}/transcribe`, {
         method: 'POST',
         body: formData,
       });

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Translation from './Translation';
 import Clone from './Clone';
 import Transcription from './Transcription';
+import { API_URL } from '../config';
 
 export default function Information(props) {
   const { transcription, audioStream, audioFile } = props;
@@ -13,7 +14,7 @@ export default function Information(props) {
   async function generateTranslation() {
     setTranslating(true);
     try {
-      const response = await fetch('http://localhost:3000/translate', {
+      const response = await fetch(`${API_URL}/translate`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

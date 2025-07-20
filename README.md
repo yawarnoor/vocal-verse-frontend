@@ -42,7 +42,31 @@ The application will be available at `http://localhost:5173`
 
 ## Backend Configuration
 
-Make sure your backend is running on `http://localhost:3000` or update the API URLs in the components.
+The frontend is configured to use environment variables for the backend URL. You can easily switch between local and deployed backend:
+
+### Using Deployed Backend (Default)
+
+The app is configured to use the deployed Railway backend by default. No changes needed.
+
+### Using Local Backend
+
+1. Create/edit the `.env` file in the project root:
+
+```env
+VITE_API_URL=http://localhost:3000
+```
+
+2. Make sure your local backend is running on `http://localhost:3000`
+
+3. Restart the development server:
+
+```bash
+npm run dev
+```
+
+### Configuration File
+
+You can also edit `src/config.js` to change the default backend URL or add additional configuration options.
 
 ## Scripts
 

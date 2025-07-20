@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_URL } from '../config';
 
 export default function Clone({ audioFile, audioStream }) {
   const [text, setText] = useState('');
@@ -60,7 +61,7 @@ export default function Clone({ audioFile, audioStream }) {
 
     try {
       console.log(`🎭 Cloning voice in ${selectedLanguage} with text: "${text}"`);
-      const response = await fetch('http://localhost:3000/clone_xtts', {
+              const response = await fetch(`${API_URL}/clone_xtts`, {
         method: 'POST',
         body: formData,
       });
