@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Clean Professional Theme */
+:root {
+  --primary: #2563EB;    /* Blue 600 */
+  --secondary: #64748B;  /* Slate 500 */
+  --accent: #0EA5E9;     /* Sky 500 */
+  --success: #059669;    /* Emerald 600 */
+  --warning: #D97706;    /* Amber 600 */
+  --error: #DC2626;      /* Red 600 */
+  --background: #F8FAFC; /* Slate 50 */
+  --surface: #FFFFFF;    /* White */
+  --text-primary: #1E293B; /* Slate 800 */
+  --text-secondary: #64748B; /* Slate 500 */
+  --border: #E2E8F0;     /* Slate 200 */
+}
+
+* {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text-primary);
+}
+
+h1, h2, h3, .bold {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+/* Button Styles */
+.btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-5 rounded-lg
+           shadow-sm hover:shadow-md transition-all duration-200;
+}
+
+.btn-secondary {
+    @apply bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 hover:border-slate-400
+           font-medium py-2.5 px-5 rounded-lg transition-all duration-200;
+}
+
+.btn-accent {
+    @apply bg-sky-500 hover:bg-sky-600 text-white font-medium py-2.5 px-5 rounded-lg
+           shadow-sm hover:shadow-md transition-all duration-200;
+}
+
+/* Card Styles */
+.card {
+    @apply bg-white rounded-xl shadow-sm border border-slate-200 p-6;
+}
+
+.card-hover {
+    @apply bg-white rounded-xl shadow-sm border border-slate-200 p-6
+           hover:shadow-md transition-shadow duration-200;
+}
+
+/* Input Styles */
+.input-modern {
+    @apply w-full px-3 py-2.5 border border-slate-300 rounded-lg 
+           focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent 
+           transition-all duration-200 text-sm;
+}
+
+/* Layout */
+.main-container {
+    @apply h-screen w-screen overflow-hidden bg-slate-50;
+}
+
+.sidebar {
+    @apply w-2/5 h-full bg-white border-r border-slate-200 overflow-y-auto;
+}
+
+.content-area {
+    @apply w-3/5 h-full overflow-y-auto;
+}
+
+/* Text Styles */
+.text-gradient {
+    background: linear-gradient(135deg, #2563EB 0%, #0EA5E9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Feature Cards */
+.feature-card {
+    @apply bg-slate-50 rounded-lg p-4 border border-slate-100
+           hover:bg-slate-100 transition-colors duration-200;
+}
+
+/* Animations */
+.animate-pulse-soft {
+    animation: pulse-soft 2s ease-in-out infinite;
+}
+
+@keyframes pulse-soft {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+/* Utilities */
+.shadow-custom {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.border-custom {
+    border: 1px solid #E2E8F0;
+}
